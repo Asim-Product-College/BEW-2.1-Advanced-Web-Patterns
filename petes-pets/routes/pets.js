@@ -46,6 +46,7 @@ module.exports = (app) => {
       })
       .catch((err) => {
         // Handle Errors
+        console.log(err);
       });
   });
 

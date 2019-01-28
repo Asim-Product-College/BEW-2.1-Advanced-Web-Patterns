@@ -18,10 +18,6 @@ mongoose.connect('mongodb://localhost/petes-pets');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-// app.engine('pubs', exphbs({
-//   defaultLayout: "main",
-//   extname: ".pub",
-// }));
 app.set('view engine', 'pug');
 
 // override with POST having ?_method=DELETE or ?_method=PUT
