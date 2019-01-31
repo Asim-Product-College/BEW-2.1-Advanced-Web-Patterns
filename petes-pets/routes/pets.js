@@ -11,15 +11,16 @@ app.get('/pets/new', (req, res) => {
 });
 
 // CREATE PET
-app.post('/pets', (req, res) => {
-  var pet = new Pet(req.body);
+app.post('/pets', (req, res) => { 
+  const pet = new Pet(req.body);
 
   pet.save()
     .then((pet) => {
-      res.redirect(`/pets/${pet._id}`);
+      res.send({pet});
     })
     .catch((err) => {
-      // Handle Errors
+        // STATUS OF 400 FOR VALIDATIONS
+        res.status(400).send(err.errors);
     }) ;
 });
 
