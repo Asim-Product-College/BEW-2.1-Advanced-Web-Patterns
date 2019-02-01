@@ -34,6 +34,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 require('./routes/index.js')(app);
 require('./routes/pets.js')(app);
 
+app.locals.PUBLIC_STRIPE_API_KEY = process.env.PUBLIC_STRIPE_API_KEY
+
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   const err = new Error('Not Found');

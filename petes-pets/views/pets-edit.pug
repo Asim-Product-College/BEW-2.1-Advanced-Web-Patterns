@@ -28,6 +28,8 @@ block content
                     label Description
                     textarea.form-control(name="description")= pet.description
                 button(type="submit").btn.btn-primary Save
+                
+            
             .text-right
                 form(action="/pets/0?_method=DELETE", method="POST")
                     button(type="submit").btn.btn-danger Remove
