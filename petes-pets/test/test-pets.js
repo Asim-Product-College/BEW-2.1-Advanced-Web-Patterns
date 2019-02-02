@@ -4,7 +4,7 @@ const server = require('../server');
 const should = chai.should();
 const Pet = require('../models/pet');
 
-const fido =     {
+const fido = {
     "name": "Norman",
     "species": "Greyhound",
     "birthday": "2008-11-11",
