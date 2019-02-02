@@ -49,3 +49,16 @@ We are not going to use an HTTP request, instead we can use a socket event on th
 
 We'll create a new event called `new user`. On the server we'll later create a listener to listen for events named this.
 
+## WHAT GOES AROUND, COMES AROUND
+
+We have successfully sent data from the client to the server with sockets.
+
+Now let's send data from the server to all clients. The server can emit as well.
+
+There's some more ways to emit data that we'll go in to later. These two are the most common.
+
+Now we have to setup the client to listen for any `new user` events coming from the server. we'll use the same sort of lingo: on (listening) "new user".
+
+Now both your server and clients will be logging in the new users.
+
+To simulate two connections, open up two browser windows and direct them both to http://localhost:3000/, create different users on each, and check both browser window's JavaScript consoles.
