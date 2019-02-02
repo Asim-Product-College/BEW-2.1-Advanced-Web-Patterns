@@ -7,6 +7,9 @@ module.exports = (app) => {
     const page = req.query.page || 1
 
     let results = await Pet.paginate({}, {page: page})
+    if (req.header('content-type') === 'application/json') {
+      return res.json({ results });
+    }
     res.render('pets-index', { pets: results.docs, pagesCount: results.pages, currentPage: page });
   });
 }

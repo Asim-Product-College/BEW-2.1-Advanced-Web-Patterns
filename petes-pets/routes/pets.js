@@ -64,7 +64,10 @@ app.get('/pets/new', (req, res) => {
 // SHOW PET
 app.get('/pets/:id', (req, res) => {
   Pet.findById(req.params.id).exec((err, pet) => {
-    res.render('pets-show', { pet: pet });
+    if (req.header('content-type') === 'application/json') {
+      return res.json({ pet });
+    }
+    res.render('pets-show', { pet });
   });
 });
 
@@ -143,7 +146,7 @@ app.get('/search', function (req, res) {
         if (err) { return res.status(400).send(err) }
 
         if (req.header('Content-Type') == 'application/json') {
-          return res.json({ pets: pets });
+          return res.json({ pets });
         } else {
           return res.render('pets-index', { pets: pets, term: req.query.term });
         }
