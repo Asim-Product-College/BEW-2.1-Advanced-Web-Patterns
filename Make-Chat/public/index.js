@@ -9,6 +9,7 @@ $(document).ready( () => {
             // socket.emit sends data to the client that sent the original data to the server.            
             socket.emit('new user', username); // Emit allows for registering custom events.
             $('.usernameForm').remove();
+            $('.mainContainer').css('display', 'flex'); // Have the main page visible
         }
     });
 
