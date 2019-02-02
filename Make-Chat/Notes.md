@@ -37,3 +37,15 @@ More info - https://hpbn.co/websocket/
 
 ## Connection Inspection 🧐
 <!-- The socket.io npm module automatically sets up a /socket.io/socket.io.js path in your project to the socket.io frontend JavaScript. So we can update our handlebars to require the client-side socket.io script. -->
+
+## Giving users an identity
+
+Let's make a separate file for our socket listeners.  This will reduce the socket clutter in our `server.js`
+
+## SUBMITTING THE FORM VIA WEBSOCKET
+Let's add some client script to send the new username to the server.
+
+We are not going to use an HTTP request, instead we can use a socket event on the connection we already have created! 
+
+We'll create a new event called `new user`. On the server we'll later create a listener to listen for events named this.
+

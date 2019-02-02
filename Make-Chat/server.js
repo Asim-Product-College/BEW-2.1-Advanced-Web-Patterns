@@ -5,10 +5,13 @@ const app = express();
 const server = require('http').Server(app);
 
 //Socket.io - successfully set up backend for incoming socket connections! 🔥
-const io = require('socket.io')(server);
-io.on("connection", (socket) => {
-  console.log("🔌 New user connected! 🔌");
-})
+// Currently, server.js is listening for any incoming socket connections from the client.
+const io = require('socket.io')(server); // //Connect to the io(server)
+io.on("connection", (socket) => { // special listener that fires whenever a new client connects.
+// for example, in a chat room application, you could message everyone that a new user joined the chat room when this event fires.
+    console.log("🔌 New user connected! 🔌"); // Do something when a new socket(client) connection is formed, in this case, log.
+    require('./sockets/chat.js')(io, socket); // This file will be read on new socket connections
+});
 
 //Express View Engine for Handlebars
 const exphbs  = require('express-handlebars');
