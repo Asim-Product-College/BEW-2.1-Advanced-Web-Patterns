@@ -62,3 +62,5 @@ Now we have to setup the client to listen for any `new user` events coming from 
 Now both your server and clients will be logging in the new users.
 
 To simulate two connections, open up two browser windows and direct them both to http://localhost:3000/, create different users on each, and check both browser window's JavaScript consoles.
+
+## LET'S SEND SOME MESSAGES

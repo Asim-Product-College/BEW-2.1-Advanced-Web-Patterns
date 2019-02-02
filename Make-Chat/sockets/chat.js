@@ -11,4 +11,11 @@ module.exports = (io, socket) => {
     // `io.emit` sends data to all clients on the connection.
     // socket.emit sends data to the client that sent the original data to the server.
     // Now whenever the client emits a "new user" request, our server will be on it.
+    
+    // Listen for new msgs
+    socket.on('new message', (data) => {
+        // Send that data back to ALL clients
+        console.log(`🎤 ${data.sender}: ${data.message} 🎤`)
+        io.emit('new message', data); // Notice how we can access the data sent like an object.
+    })
 }
