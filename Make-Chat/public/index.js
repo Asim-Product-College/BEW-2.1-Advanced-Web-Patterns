@@ -1,6 +1,15 @@
 $(document).ready( () => {
     const socket = io.connect(); //Connect to the socket.io server
     let currentUser; // Keep track of current user
+    socket.emit('get online users'); // Get the online users from the server
+    
+    socket.on('get online users', (onlineUsers) => {
+        //You may have not have seen this for loop before. It's syntax is for(key in obj)
+        //Our usernames are keys in the object of onlineUsers.
+        for(username in onlineUsers){
+            $('.usersOnline').append(`<p class="userOnline">${username}</p>`);
+        }
+    }); // Get the online users from the server
     $('#createUserBtn').click((e) => {
         e.preventDefault();
         let username = $('#usernameInput').val();

@@ -64,3 +64,17 @@ Now both your server and clients will be logging in the new users.
 To simulate two connections, open up two browser windows and direct them both to http://localhost:3000/, create different users on each, and check both browser window's JavaScript consoles.
 
 ## LET'S SEND SOME MESSAGES
+
+## GREAT, WE HAVE USERS AND CHAT! WE'RE FINISHED RIGHT?
+
+If you were to reload or create a new instance in another tab, you will see that the online users and messages don't save.
+
+This is because our application is currently only showing new data coming in. There is no system in place to show old data.
+
+Also we don't even have different channels. How boring is that?
+
+Let's move on!
+
+## BE A VILLAIN AND DESTROY THESE USERS!
+When a user closes out of the browser window, we want to get rid of them from our onlineUsers.
+
