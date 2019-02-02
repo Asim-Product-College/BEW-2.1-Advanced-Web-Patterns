@@ -14,6 +14,17 @@ const methodOverride = require('method-override')
 const app = express();
 
 const mongoose = require('mongoose');
+
+// const nodemailer = require('nodemailer');
+// const mg = require('nodemailer-mailgun-transport');
+// const nodemailerMailgun = nodemailer.createTransport(mg(auth));
+// const auth = {
+//   auth: {
+//     api_key: 'key-keyaldkjfadfasdfadsfadsf',
+//     domain: 'domain.com'
+//   }
+// }
+
 mongoose.connect('mongodb://localhost/petes-pets');
 
 // view engine setup
