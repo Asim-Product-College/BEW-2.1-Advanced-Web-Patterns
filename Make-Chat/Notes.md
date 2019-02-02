@@ -34,3 +34,6 @@ The request sends a `Sec-WebSocket-Key` which contains base64-encoded random byt
 
 More info - https://hpbn.co/websocket/
 
+
+## Connection Inspection 🧐
+<!-- The socket.io npm module automatically sets up a /socket.io/socket.io.js path in your project to the socket.io frontend JavaScript. So we can update our handlebars to require the client-side socket.io script. -->
