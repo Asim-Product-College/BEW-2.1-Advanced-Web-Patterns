@@ -78,3 +78,7 @@ Let's move on!
 ## BE A VILLAIN AND DESTROY THESE USERS!
 When a user closes out of the browser window, we want to get rid of them from our onlineUsers.
 
+`socket.on("disconnect")` is a special listener that fires when a user exits out of the application
+
+Now update the client to refresh its online users when a "user has left".
+
