@@ -1,5 +1,5 @@
 //chat.js
-module.exports = (io, socket, onlineUsers) => {
+module.exports = (io, socket, onlineUsers, channels) => {
     //Future socket listeners will be here
     // Listen for "new user" socket emits
     // add a matching socket listener on the backend that listens for an event called new user.
@@ -28,8 +28,18 @@ module.exports = (io, socket, onlineUsers) => {
     });
 
     socket.on('new channel', (newChannel) => {
-        console.log(newChannel);
-    });
+        //Save the new channel to our channels object. The array will hold the messages.
+        channels[newChannel] = [];
+        //Have the socket join the new channel room. That's interesting.
+        socket.join(newChannel);
+        //Inform all clients of the new channel.
+        io.emit('new channel', newChannel); // telling the socket to join the new channel room.
+        //Emit to the client that made the new channel, to change their channel to the one they made.
+        socket.emit('user changed channel', {
+          channel : newChannel,
+          messages : channels[newChannel]
+        });
+      })
 
     //This fires when a user closes out of the application
     socket.on('disconnect', () => {
