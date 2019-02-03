@@ -37,6 +37,16 @@ $(document).ready( () => {
             $('#chatInput').val("");
         }        
     });
+
+    $('#newChannelBtn').click( () => {
+        let newChannel = $('#newChannelInput').val();
+      
+        if(newChannel.length > 0){
+          socket.emit('new channel', newChannel); // Emit the new channel to the server
+          $('#newChannelInput').val("");
+        }
+      })
+
     // socket listeners
     socket.on('new user', (username) => {
         console.log(`✋ ${username} has joined the chat! ✋`);
@@ -61,4 +71,6 @@ $(document).ready( () => {
             $('.usersOnline').append(`<p>${username}</p>`);
         }
     });
+
+    
 })

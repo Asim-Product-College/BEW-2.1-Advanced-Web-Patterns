@@ -82,3 +82,10 @@ When a user closes out of the browser window, we want to get rid of them from ou
 
 Now update the client to refresh its online users when a "user has left".
 
+## CREATING CHANNELS
+
+So currently all messages are in one chat room, but if we want to be like Slack or Discord we need there to be many channels. We're going to use Socket.io's built in rooms functionality to implement these channels.
+
+We're now going to create different "channels" for users to create or join. Let's add some functionality to the channel creator on the client. Each channel will be a sub-chatroom that is logged as belonging to a parent socket connection.
+
+Read more - https://socket.io/docs/rooms-and-namespaces/#Rooms
