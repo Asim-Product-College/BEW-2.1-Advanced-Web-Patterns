@@ -21,3 +21,5 @@ module.exports = (app) => {
 // result.limit // the limit
 // result.page // the current page
 // result.pages // the total number of pages
+
+// Async await

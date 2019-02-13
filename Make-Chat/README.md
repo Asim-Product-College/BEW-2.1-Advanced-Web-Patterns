@@ -7,6 +7,7 @@ Coming soon.
 ## How to run
 - clone repo
 - run the following commands
+
 ```
 npm install
 nodemon
@@ -23,19 +24,6 @@ Coming soon.
 
 ## Features / Milestones
 Coming soon.
-<!-- - [x] Simple Search: Add a search bar in the navbar to search pets. -->
-<!-- - [x] Pagination: Paginate the results.
-- [x] Adding Validations: Add validations to protect against unsanitary data getting into your db.
-- [x] Error and success messages: When a user attempts to perform a forbidden action or the server has an issue,
-gracefully show an error message to the user
-- [x] Uploading images and files: Upload pictures of pets from new and edit forms
-- [x] Adding payment gateways like Stripe: Buy pets using Stripe.
-- [x] Sending emails: Send an email when a pet is purchased.
-- [x] Full Text Search: Fuzzy and full-text search on multiple criteria
-- [x] Respond to JSON: Make your project into a full API -->
-
-<!-- ## Approach
-This app was built from the 'outside-in', meaning each step, the views or templates will be built before the backend functionality, using mock data. -->
 
 ## Learning Goals
 - Understand how WebSockets work within a server/client relationship through socket.io

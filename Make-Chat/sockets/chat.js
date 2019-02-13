@@ -19,12 +19,14 @@ module.exports = (io, socket, onlineUsers, channels) => {
     // Listen for new msgs
     socket.on('new message', (data) => {
         // Send that data back to ALL clients
-        console.log(`🎤 ${data.sender}: ${data.message} 🎤`)
-        io.emit('new message', data); // Notice how we can access the data sent like an object.
-    })
+        console.log(`🎤 ${data.sender}: ${data.message} 🎤`); // Save new msg to the channel
+        channels[data.channel].push({sender : data.sender, message : data.message});
+        // Emit only to sockets that are in that channel room.
+        io.to(data.channel).emit('new message', data); // Notice how we can access the data sent like an object.
+    });
 
     socket.on('get online users', () => { // Send the online users when someone connects.
-        socket.emit('get online users', onlineUsers); //Send over the onlineUsers
+        socket.emit('get online users', onlineUsers); //Send over onlineUsers
     });
 
     socket.on('new channel', (newChannel) => {
