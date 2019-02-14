@@ -40,3 +40,7 @@ In a challenge-response system there is no way for clients to know when new data
 *It’s important to note that WebSockets convert their HTTP connection to a WebSocket connection.* In other words, a WebSocket connection uses HTTP only to do the initial handshake (for authorization and authentification), after which the TCP connection is utilized to send data via the its own protocol (hybd).
 
 ![](/GIFs/websocket.gif)
+
+## Emitting events
+The main idea behind Socket.IO is that you can send and receive any events you want, with any data you want.
+Any objects that can be encoded as JSON will do, and binary data is supported too.
