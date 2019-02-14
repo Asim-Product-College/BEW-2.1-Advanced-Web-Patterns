@@ -7,7 +7,10 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){ // incoming sockets
-console.log('a user connected');
+    console.log('a user connected');
+    socket.on('chat message', function(msg) {
+        console.log('message: ' + msg);
+    });
 });
   
 http.listen(3000, function(){
